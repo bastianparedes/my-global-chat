@@ -2,7 +2,7 @@
 
 .main {
     background-color: rgb(68, 71, 255);
-    background-image: url('/images/background.jpg');
+    background-image: url('/my-global-chat/images/background.jpg');
     height: 91vh;
     display: flex;
     align-items: center;

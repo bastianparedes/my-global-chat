@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './styles.module.css';
+import { basePath } from '../../next.config';
 
 export default function IndexContent() {
 
@@ -15,7 +16,7 @@ export default function IndexContent() {
         };
     
         sessionStorage.setItem('username', username.current);
-        location.pathname = '/chatRoom';
+        location.pathname = basePath + '/chatRoom';
     }
 
     let onKeyDown = (event) => {
