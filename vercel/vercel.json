@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://my-global-chat--bastianparedes.replit.app/$1"
+    }
+  ]
+}

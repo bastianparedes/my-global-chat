@@ -3,8 +3,6 @@ import { GrSend } from 'react-icons/gr'
 import SocketIOClient from 'socket.io-client';
 import styles from './styles.module.css';
 import Message from '../message';
-import { basePath } from '../../../next.config';
-
 
 export default function MainChat() {
 
@@ -20,7 +18,7 @@ export default function MainChat() {
         username.current = sessionStorage.getItem('username') || '';
 
         const socket = SocketIOClient.connect(process.env.BASE_URL, {
-            path: basePath + '/api/socketio',
+            path: '/api/socketio',
         });
 
         socket.on('connect', () => {
@@ -49,7 +47,7 @@ export default function MainChat() {
         if (message.replaceAll(' ', '') === '') return;
 
         scrollBarWasAtBottom.current = messagesSectionRef.current.scrollTop + messagesSectionRef.current.clientHeight === messagesSectionRef.current.scrollHeight;
-        fetch(basePath + '/api/chat', {
+        fetch('/api/chat', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
